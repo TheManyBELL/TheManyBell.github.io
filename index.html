@@ -201,20 +201,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -254,6 +254,98 @@
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/Computer-Graphics/ckt3vrgjw0000e0u9bq3xcj8k/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar01.jpg">
+      <meta itemprop="name" content="Yuli">
+      <meta itemprop="description" content="Lili's personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuli's Youth">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Computer-Graphics/ckt3vrgjw0000e0u9bq3xcj8k/" class="post-title-link" itemprop="url">OpenGL学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-03 12:51:00 / 修改时间：12:58:45" itemprop="dateCreated datePublished" datetime="2021-09-03T12:51:00+08:00">2021-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Graphics/" itemprop="url" rel="index"><span itemprop="name">Computer Graphics</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、OpenGL填充图案函数<br>    1、创建掩模 fillPattern<br>    2、设定掩模为当前填充图案<br>        glPlygonStipple(fillPattern)<br>    3、激活填充子程序<br>        glEnable(GL_POLYGON_STIPPLE)<br>2、纹理和插值图案<br>    填充多边形有两种基本方法：<br>    1、纹理。<br>        主要指material，我的理解是图案的拉伸覆盖。<br>    2、插值填充。<br>        方法：对多边形的顶点设定不同颜色，在GL_SMOOTH模式下默认插值填充。<br>        用处：在各种光照条件下更加真实地着色多边形表面。<br>        代码：interpolationGraph(void)</p>
+<p>3、线框图方法<br>    仅显示多边形的边<br>    glPolygonMode(face,displayMode)<br>        face:GL_FRONT,GL_BACK,GL_FRONT_AND_BACK<br>        displayMode:GL_LINE,GL_POINT<br>    Q1:我想让多边形填充颜色并且显示边<br>    A1:通过指定多边形两次来实现。第一次绘制一个内部填充颜色的多边形，第二次绘制多边形的边，具体见”带边线的实心三角形.cpp”。</p>
+<pre><code>缝线的产生
+    产生原因：扫描线填充算法和边绘制算法的差异。具体而言是深度值的计算差异。
+    对应措施：
+        1、（别画框线）可见性测试时用内部填充色来显示多边形边界
+        2、调整填充算法计算得到的深度值，使得与边线算法得到的深度值不同
+            glEnable(GL_POLYGON_OFFSET_FILL);
+            glPolygonOffset(factor1,factor2); // 这俩参数的值来自经验
+            当然也可以调整边线的深度值：GL_POLYGON_OFFSET_LINE
+        3、使用模板缓存来限制填充算法（不推荐）。
+Q2:如何显示一个凹多边形
+A2：（1）分割成一组三角形，（2）填充三角形
+
+消除选定边的机制
+    glEdgeFlag(flag); // GL_TRUE|GL_FALSE;作用于之后的顶点
+    多边形的顶点有一个flag，用于表明是否与下一个顶点相连。</code></pre>
+<p>4、前向面函数<br>    默认情况下多边形面的朝向由顶点次序决定，但可以通过函数指定<br>    glFrontFace(vertexOrder);<br>        GL_CW 表示随后定义的顺时针多边形为前向面<br>        GL_CCW 则相反</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -362,7 +454,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/machine-learning/ckhufib2c0001c4u973uah1md/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/Machine-Learning/ckhufib2c0001c4u973uah1md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar01.jpg">
@@ -376,7 +468,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/machine-learning/ckhufib2c0001c4u973uah1md/" class="post-title-link" itemprop="url">Attention Learn to Solve VRP Problem</a>
+            <a href="/Machine-Learning/ckhufib2c0001c4u973uah1md/" class="post-title-link" itemprop="url">Attention Learn to Solve VRP Problem</a>
         </h2>
 
         <div class="post-meta-container">
@@ -386,17 +478,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-11-23 17:55:00 / 修改时间：23:13:44" itemprop="dateCreated datePublished" datetime="2020-11-23T17:55:00+08:00">2020-11-23</time>
+      <time title="创建时间：2020-11-23 17:55:00" itemprop="dateCreated datePublished" datetime="2020-11-23T17:55:00+08:00">2020-11-23</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-03 12:55:07" itemprop="dateModified" datetime="2021-09-03T12:55:07+08:00">2021-09-03</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/machine-learning/" itemprop="url" rel="index"><span itemprop="name">machine learning</span></a>
+          <a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
         </span>
     </span>
 
@@ -472,8 +570,15 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-11-23 14:30:31" itemprop="dateCreated datePublished" datetime="2020-11-23T14:30:31+08:00">2020-11-23</time>
+      <time title="创建时间：2020-11-23 14:30:00" itemprop="dateCreated datePublished" datetime="2020-11-23T14:30:00+08:00">2020-11-23</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-03 12:51:06" itemprop="dateModified" datetime="2021-09-03T12:51:06+08:00">2021-09-03</time>
+      </span>
 
   
 </div>
@@ -557,7 +662,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

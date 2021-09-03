@@ -23,18 +23,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="Lili&#39;s personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yuli&#39;s Youth">
-<meta property="og:url" content="http://example.com/archives/2020/12/index.html">
+  <meta name="description" content="1、OpenGL填充图案函数    1、创建掩模 fillPattern    2、设定掩模为当前填充图案        glPlygonStipple(fillPattern)    3、激活填充子程序        glEnable(GL_POLYGON_STIPPLE)2、纹理和插值图案    填充多边形有两种基本方法：    1、纹理。        主要指material，我的理解是图案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL学习笔记">
+<meta property="og:url" content="http://example.com/Computer-Graphics/ckt3vrgjw0000e0u9bq3xcj8k/index.html">
 <meta property="og:site_name" content="Yuli&#39;s Youth">
-<meta property="og:description" content="Lili&#39;s personal blog">
+<meta property="og:description" content="1、OpenGL填充图案函数    1、创建掩模 fillPattern    2、设定掩模为当前填充图案        glPlygonStipple(fillPattern)    3、激活填充子程序        glEnable(GL_POLYGON_STIPPLE)2、纹理和插值图案    填充多边形有两种基本方法：    1、纹理。        主要指material，我的理解是图案">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-03T04:51:00.000Z">
+<meta property="article:modified_time" content="2021-09-03T04:58:45.344Z">
 <meta property="article:author" content="Yuli">
+<meta property="article:tag" content="OpenGL">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/2020/12/">
+<link rel="canonical" href="http://example.com/Computer-Graphics/ckt3vrgjw0000e0u9bq3xcj8k/">
 
 
 <script class="page-configurations">
@@ -42,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Yuli's Youth</title>
+  <title>OpenGL学习笔记 | Yuli's Youth</title>
   
 
 
@@ -250,53 +253,113 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/Computer-Graphics/ckt3vrgjw0000e0u9bq3xcj8k/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar01.jpg">
+      <meta itemprop="name" content="Yuli">
+      <meta itemprop="description" content="Lili's personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuli's Youth">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenGL学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2021-09-03 12:51:00 / 修改时间：12:58:45" itemprop="dateCreated datePublished" datetime="2021-09-03T12:51:00+08:00">2021-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Graphics/" itemprop="url" rel="index"><span itemprop="name">Computer Graphics</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>1、OpenGL填充图案函数<br>    1、创建掩模 fillPattern<br>    2、设定掩模为当前填充图案<br>        glPlygonStipple(fillPattern)<br>    3、激活填充子程序<br>        glEnable(GL_POLYGON_STIPPLE)<br>2、纹理和插值图案<br>    填充多边形有两种基本方法：<br>    1、纹理。<br>        主要指material，我的理解是图案的拉伸覆盖。<br>    2、插值填充。<br>        方法：对多边形的顶点设定不同颜色，在GL_SMOOTH模式下默认插值填充。<br>        用处：在各种光照条件下更加真实地着色多边形表面。<br>        代码：interpolationGraph(void)</p>
+<p>3、线框图方法<br>    仅显示多边形的边<br>    glPolygonMode(face,displayMode)<br>        face:GL_FRONT,GL_BACK,GL_FRONT_AND_BACK<br>        displayMode:GL_LINE,GL_POINT<br>    Q1:我想让多边形填充颜色并且显示边<br>    A1:通过指定多边形两次来实现。第一次绘制一个内部填充颜色的多边形，第二次绘制多边形的边，具体见”带边线的实心三角形.cpp”。</p>
+<pre><code>缝线的产生
+    产生原因：扫描线填充算法和边绘制算法的差异。具体而言是深度值的计算差异。
+    对应措施：
+        1、（别画框线）可见性测试时用内部填充色来显示多边形边界
+        2、调整填充算法计算得到的深度值，使得与边线算法得到的深度值不同
+            glEnable(GL_POLYGON_OFFSET_FILL);
+            glPolygonOffset(factor1,factor2); // 这俩参数的值来自经验
+            当然也可以调整边线的深度值：GL_POLYGON_OFFSET_LINE
+        3、使用模板缓存来限制填充算法（不推荐）。
+Q2:如何显示一个凹多边形
+A2：（1）分割成一组三角形，（2）填充三角形
+
+消除选定边的机制
+    glEdgeFlag(flag); // GL_TRUE|GL_FALSE;作用于之后的顶点
+    多边形的顶点有一个flag，用于表明是否与下一个顶点相连。</code></pre>
+<p>4、前向面函数<br>    默认情况下多边形面的朝向由顶点次序决定，但可以通过函数指定<br>    glFrontFace(vertexOrder);<br>        GL_CW 表示随后定义的顺时针多边形为前向面<br>        GL_CCW 则相反</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-12-06T20:25:00+08:00"
-              content="2020-12-06">
-          12-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/uncategorized/ckid3mw150000k4u9cti000v6/" itemprop="url">
-            <span itemprop="name">命令行输入包argparse使用指南</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/uncategorized/ckid3mw150000k4u9cti000v6/" rel="prev" title="命令行输入包argparse使用指南">
+                  <i class="fa fa-chevron-left"></i> 命令行输入包argparse使用指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
 
-  
 
 
 
